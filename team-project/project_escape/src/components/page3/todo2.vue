@@ -19,7 +19,7 @@
                     type="text"
                     name="content"
                     id="content"
-                    placeholder="ex) 랩실 출근하기"
+                    placeholder="ex) 09:00 랩실 출근"
                     v-model="input_content"/></center>
                 &nbsp;
                 <center><input id="add-todo" type="submit" value="추가"/></center>
