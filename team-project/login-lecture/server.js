@@ -9,22 +9,19 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// parse requests of content-type - application/json
+// 요청구문 - application/json
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
+// 요청구문 - application/x-www-form-urlencoded
 app.use(express.urlencoded({extended: true}));
 
-// database
+// 데이터베이스
 const db = require("./app/models");
 const Role = db.role;
 
 db
     .sequelize
     .sync();
-// force: true will drop the table if it already exists
-// db.sequelize.sync({force: true}).then(() => {   console.log('Drop and Resync
-// Database with { force: true }');   initial(); }); simple route
 app.get("/", (req, res) => {
     res.json({message: "아령하세연"});
 });
@@ -32,7 +29,7 @@ app.get("/", (req, res) => {
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
-// set port, listen for requests
+// 포트 설정, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);

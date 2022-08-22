@@ -69,19 +69,18 @@
                             .string()
                             .required("이름을 입력하시오")
                             .min(2, "2글자 이상을 쓰세요!")
-                            .max(20, "Must be maximum 20 characters!"),
+                            .max(10, "error!"),
 
                         email: yup
                             .string()
                             .required("이메일을 입력하시오")
-                            .email("유효한 이메일이 아닙니다.")
-                            .max(50, "Must be maximum 50 characters!"),
+                            .email("유효한 이메일이 아닙니다."),
 
                         password: yup
                             .string()
                             .required("비밀번호를 입력해주세요!")
-                            .min(6, "Must be at least 6 characters!")
-                            .max(40, "Must be maximum 40 characters!")
+                            .min(6, "6자이상 18자 미만을 입력해주세요!")
+                            .max(40, "6자이상 18자 미만을 입력해주세요!")
                     });
 
                 return {successful: false, loading: false, message: "", schema};

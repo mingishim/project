@@ -9,12 +9,12 @@ const catchError = (err, res) => {
     if (err instanceof TokenExpiredError) {
         return res
             .status(401)
-            .send({message: "Unauthorized! Access Token was expired!"});
+            .send({message: "토큰이 만료되었습니다."});
     }
 
     return res
         .sendStatus(401)
-        .send({message: "Unauthorized!"});
+        .send({message: "error!"});
 }
 
 const verifyToken = (req, res, next) => {
@@ -23,7 +23,7 @@ const verifyToken = (req, res, next) => {
     if (!token) {
         return res
             .status(403)
-            .send({message: "No token provided!"});
+            .send({message: "error! : 토큰이 없습니다!"});
     }
 
     jwt.verify(token, config.secret, (err, decoded) => {
@@ -51,7 +51,7 @@ const isAdmin = (req, res, next) => {
 
                     res
                         .status(403)
-                        .send({message: "Require Admin Role!"});
+                        .send({message: "Admin이 필요합니다."});
                     return;
                 });
         });
@@ -73,7 +73,7 @@ const isModerator = (req, res, next) => {
 
                     res
                         .status(403)
-                        .send({message: "Require Moderator Role!"});
+                        .send({message: "Moderator가 필요합니다!"});
                 });
         });
 };
@@ -99,7 +99,7 @@ const isModeratorOrAdmin = (req, res, next) => {
 
                     res
                         .status(403)
-                        .send({message: "Require Moderator or Admin Role!"});
+                        .send({message: "Moderator나 Admin이 필요합니다!"});
                 });
         });
 };

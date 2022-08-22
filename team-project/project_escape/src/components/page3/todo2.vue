@@ -19,10 +19,10 @@
                     type="text"
                     name="content"
                     id="content"
-                    placeholder="ex) 집가고 싶다"
+                    placeholder="ex) 랩실 출근하기"
                     v-model="input_content"/></center>
                 &nbsp;
-                <center><input id="add-todo" type="submit" value="Add todo"/></center>
+                <center><input id="add-todo" type="submit" value="추가"/></center>
             </form>
 
 
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="actions">
-                        <button class="delete" @click="removeTodo(todo)">Delete</button>
+                        <button class="delete" @click="removeTodo(todo)">삭제</button>
                     </div>
                 </div>
         </div>

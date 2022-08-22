@@ -34,7 +34,6 @@ exports.signup = (req, res) => {
                             });
                     });
             } else {
-                // user role = 1
                 user
                     .setRoles([])
                     .then(() => {

@@ -4,7 +4,7 @@ const User = db.user;
 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
 
-    // Username
+    // 이름
     User
         .findOne({
             where: {
@@ -19,7 +19,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
                 return;
             }
 
-            // Email
+    // 이메일
             User
                 .findOne({
                     where: {
@@ -33,7 +33,6 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
                             .send({message: "이미 사용하고있는 이메일 입니다."});
                         return;
                     }
-
                     next();
                 });
         });

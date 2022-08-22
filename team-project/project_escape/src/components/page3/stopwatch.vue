@@ -2,7 +2,7 @@
 <!--Stopwatch-->
     <div id="app">
         <button id="in" @click="start">입실</button>
-        <button id="out" @click="stop">탈출</button>
+        <a class="nav-link" @click.prevent="logOut"><button id="out" @click="stop">탈출</button></a>
         <p class="stopwatch">{{formattedElapsedTime}}</p>
     </div>
 
@@ -27,6 +27,15 @@ export default {
             }
         },
         methods: {
+            logOut() {
+                                this
+                                    .$store
+                                    .dispatch('auth/logout');
+                                this
+                                    .$router
+                                    .push('/login');
+                            }
+                        },
             start() {
                 // 인터벌이 이미 실행 중인지 확인
                 if (!this.timer) {
@@ -42,7 +51,6 @@ export default {
                 }
             }
         }
-    };
 </script>
 
 <style>
