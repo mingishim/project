@@ -36,7 +36,7 @@ exports.signup = (req, res) => {
             } else {
                 // user role = 1
                 user
-                    .setRoles([1])
+                    .setRoles([])
                     .then(() => {
                         res.send({message: "회원가입 성공!"});
                     });

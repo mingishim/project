@@ -14,7 +14,8 @@ module.exports = function (app) {
         //api로부터 verifySignUp을 확인할 수 있다.
         "/api/auth/signup",
         [
-            verifySignUp.checkDuplicateUsernameOrEmail, verifySignUp.checkRolesExisted
+            verifySignUp.checkDuplicateUsernameOrEmail,
+            verifySignUp.checkRolesExisted
         ],
         controller.signup
     );
