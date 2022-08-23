@@ -23,19 +23,11 @@ export default {
                 const date = new Date(null);
                 date.setSeconds(this.elapsedTime / 1000);
                 const utc = date.toUTCString();
+                //substring 안됨
                 return utc.substr(utc.indexOf(":") - 2, 8);
             }
         },
         methods: {
-            logOut() {
-                                this
-                                    .$store
-                                    .dispatch('auth/logout');
-                                this
-                                    .$router
-                                    .push('/login');
-                            }
-                        },
             start() {
                 // 인터벌이 이미 실행 중인지 확인
                 if (!this.timer) {
@@ -50,6 +42,15 @@ export default {
                     this.timer = undefined;
                 }
             }
+        },
+                    logOut() {
+                                this
+                                    .$store
+                                    .dispatch('auth/logout');
+                                this
+                                    .$router
+                                    .push('/login');
+                            }
         }
 </script>
 
@@ -90,6 +91,4 @@ p {
     top: 100px;
     font-family: 'Do Hyeon', sans-serif;
 }
-
-/*입실버튼 막기*/
 </style>
