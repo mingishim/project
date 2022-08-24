@@ -81,6 +81,8 @@
                             this
                                 .$router
                                 .push("/profile");
+                            this
+                            alert('안녕하세요 출근을 환영합니다.')
                         }, (error) => {
                             this.loading = false;
                             this.message = (

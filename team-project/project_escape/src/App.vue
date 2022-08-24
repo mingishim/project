@@ -94,6 +94,8 @@
                                 this
                                     .$router
                                     .push('/login');
+                                then
+                                    alert('undefined')
                             }
                         },
                         mounted() {

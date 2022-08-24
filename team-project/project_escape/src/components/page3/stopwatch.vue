@@ -2,7 +2,7 @@
 <!--Stopwatch-->
     <div id="app">
         <button id="in" @click="start">입실</button>
-        <a class="nav-link" @click.prevent="logOut"><button id="out" @click="stop">탈출</button></a>
+        <button id="out" v-on:click="stop">탈출</button>
         <p class="stopwatch">{{formattedElapsedTime}}</p>
     </div>
 
@@ -10,13 +10,12 @@
 </template>
 
 <script>
-import {formattedElapsedTime} from "../page3/stopwatch.vue"
 
 export default {
         name: "App",
         data() {
-        localStorage.setItem('stopwatch', JSON.stringify(formattedElapsedTime))
             return {elapsedTime: 0, timer: undefined,};
+
         },
         computed: {
             formattedElapsedTime() {
@@ -37,25 +36,33 @@ export default {
                 }
             },
             stop() {
-                if (this.timer) {
-                    clearInterval(this.timer)
-                    this.timer = undefined;
-                }
-            }
-        },
-                    logOut() {
                                 this
                                     .$store
                                     .dispatch('auth/logout');
                                 this
                                     .$router
                                     .push('/login');
+                                this
+                                    alert('로그아웃 되었습니다.');
                             }
+                        },
         }
+
+
+        //멈춤 구문
+            //stop() {
+                //if (this.timer) {
+                    //clearInterval(this.timer)
+                    //this.timer = undefined;
+               // }
+
+           // }
+        //},
+       // }
+
 </script>
 
 <style>
-
 
 p {
     font-size: 65px;
