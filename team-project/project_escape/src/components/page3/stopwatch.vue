@@ -10,8 +10,7 @@
 </template>
 
 <script>
-// import stopwatch from "../page3/stopwatch.vue"
-// import formattedElapsedTime from "../page3/stopwatch.vue"
+
 
 export default {
         name: "App",
@@ -39,6 +38,7 @@ export default {
                 },
 
                                  // 로컬스토리지 저장 .. 안된다..
+
                 //  this.watch(stopwatch, (formattedElapsedTime) => {
                 //    localStorage.setItem('stopwatch', JSON.stringify(formattedElapsedTime))
                 //    })
@@ -78,7 +78,7 @@ p {
     color: rgb(40, 92, 197);
     position: absolute;
     left: 10px;
-    bottom: 585px;
+    top: 5px;
 }
 
 #in {

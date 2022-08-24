@@ -1,6 +1,5 @@
 <template>
     <div class="col-md-12">
-        <div class="card card-container">
             <center>
                 <img id="profile-img" src="../assets/백경씨수정본.png"></center>
 
@@ -30,7 +29,6 @@
                     </div>
                 </Form>
             </div>
-        </div>
     </template>
 
     <script>
@@ -97,6 +95,11 @@
     <style scoped="scoped">
         @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
+        .col-md-12 {
+            border-style: none;
+            background-color: white;
+        }
+
         #profile-img {
             width: 30rem;
             left: 400px;
@@ -114,20 +117,6 @@
 
         template {
             background-color: #2980B9;
-        }
-
-        #logout {
-            color: skyblue;
-            background-color: rgb(255, 255, 255);
-            border: 3px solid skyblue;
-            height: 50px;
-            width: 140px;
-            border-radius: 5px;
-            font-size: 22px;
-            font-weight: 700;
-            position: absolute;
-            top: 640px;
-            right: 500px;
         }
 
         #greeting {

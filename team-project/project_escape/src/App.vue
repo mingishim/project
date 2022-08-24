@@ -16,12 +16,6 @@
                         <a href="/" class="navbar-brand">
                             <img id="sme" src="./assets/sme.png"></a>
                             <div class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <router-link to="/home" class="nav-link">
-                                        <font-awesome-icon icon="home"/>
-                                        Home
-                                    </router-link>
-                                </li>
 
                             </div>
                             <div v-if="!currentUser" class="navbar-nav ml-auto">
@@ -48,7 +42,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" @click.prevent="logOut">
                                         <font-awesome-icon icon="sign-out-alt"/>
-                                        LogOut
+                                        탈출
                                     </a>
                                 </li>
                             </div>
@@ -94,8 +88,8 @@
                                 this
                                     .$router
                                     .push('/login');
-                                then
-                                    alert('undefined')
+                                this
+                                    alert("오늘 하루도 고생하셨습니다!")
                             }
                         },
                         mounted() {
