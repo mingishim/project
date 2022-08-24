@@ -10,6 +10,8 @@
 </template>
 
 <script>
+// import stopwatch from "../page3/stopwatch.vue"
+// import formattedElapsedTime from "../page3/stopwatch.vue"
 
 export default {
         name: "App",
@@ -34,7 +36,13 @@ export default {
                         this.elapsedTime += 1000;
                     }, 1000);
                 }
-            },
+                },
+
+                                 // 로컬스토리지 저장 .. 안된다..
+                //  this.watch(stopwatch, (formattedElapsedTime) => {
+                //    localStorage.setItem('stopwatch', JSON.stringify(formattedElapsedTime))
+                //    })
+                // localStorage.setItem('stopwatch', JSON.stringify(formattedElapsedTime));
             stop() {
                                 this
                                     .$store
@@ -43,7 +51,7 @@ export default {
                                     .$router
                                     .push('/login');
                                 this
-                                    alert('로그아웃 되었습니다.');
+                                    alert('오늘 하루도 고생하셨습니다!');
                             }
                         },
         }
@@ -56,7 +64,7 @@ export default {
                     //this.timer = undefined;
                // }
 
-           // }
+           //}
         //},
        // }
 
