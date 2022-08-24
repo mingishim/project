@@ -27,7 +27,11 @@
                             <Field name="password" type="password" class="form-control"/>
                             <ErrorMessage name="password" class="error-feedback"/>
                         </div>
-
+                        <div class="form-group">
+                            <label for="repassword">비밀번호 확인</label>
+                            <Field name="repassword" type="password" class="form-control"/>
+                            <ErrorMessage name="repassword" class="error-feedback"/>
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-primary btn-block" :disabled="loading">
                                 <span v-show="loading" class="spinner-border spinner-border-sm"></span>
@@ -80,9 +84,12 @@
                             .string()
                             .required("비밀번호를 입력해주세요!")
                             .min(6, "6자이상 18자 미만을 입력해주세요!")
-                            .max(40, "6자이상 18자 미만을 입력해주세요!")
-                    });
+                            .max(40, "6자이상 18자 미만을 입력해주세요!"),
 
+                        repassword: yup
+                            .string()
+                            .oneOf([yup.ref('password')], '입력한 비밀번호와 일치하지 않습니다.')
+                    });
                 return {successful: false, loading: false, message: "", schema};
             },
             computed: {
